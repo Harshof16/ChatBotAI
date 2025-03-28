@@ -1,4 +1,3 @@
-import "../styles/globals.css";
 import ChatBox from '../components/ChatBox';
 import { Bot } from "lucide-react";
 
