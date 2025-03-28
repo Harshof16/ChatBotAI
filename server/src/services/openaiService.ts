@@ -1,5 +1,3 @@
-import OpenAI from 'openai';
-import axios from 'axios';
 import Groq from 'groq-sdk';
 import dotenv from 'dotenv';
 
@@ -36,9 +34,9 @@ export const getAIResponse = async (message: string): Promise<string> => {
           });
             // console.log('response', response);
         return response.choices[0].message?.content?.toString() || "I couldn't understand that.";
-    } catch (error) {
+    } catch (error:any) {
         console.error("OpenAI Error:", error);
-        return error.message || "Error processing your request.";
+        return error?.message || "Error processing your request.";
     }
 };
 
